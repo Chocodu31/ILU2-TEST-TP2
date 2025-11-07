@@ -3,6 +3,7 @@ package controleur;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
@@ -27,8 +28,14 @@ class ControlVerifierIdentiteTest {
 	}
 
 	@Test
-	void testVerifierIdentite() {
+	@DisplayName("Villageois existe")
+	void testVerifierIdentiteExistant() {
 		assertTrue(controlVerifierIdentite.verifierIdentite("Abraracourcix"));
+	}
+	
+	@Test
+	@DisplayName("Villageois n'existe pas")
+	void testVerifierIdentitenonExistant() {
 		assertFalse(controlVerifierIdentite.verifierIdentite("Panoramix"));
 	}
 
